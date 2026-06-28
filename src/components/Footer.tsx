@@ -118,7 +118,7 @@ const Footer = () => {
  
       {/* Ligne de bas */}
       <div className="footer-bottom">
-        <p>Conçu & développé par <span>Isidore Djemabou</span></p>
+        <p>Conçu & développé par <span>Isidore DJEMABOU</span></p>
       </div>
  
     </motion.footer>
