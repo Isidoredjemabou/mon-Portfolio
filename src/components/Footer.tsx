@@ -49,7 +49,7 @@ const socials = [
   {
     icon: <FaGithub size={18} />,
     label: "GitHub",
-    href: "https://github.com/Isidore_djemabou",
+    href: "https://github.com/Isidoredjemabou",
     hoverColor: "#ffffff",
   },
   {
@@ -74,7 +74,7 @@ const Footer = () => {
  
         {/* ── Gauche : Identité ── */}
         <div className="footer-identity">
-          <h3 className="footer-name">Isidore Djemabou</h3>
+          <h3 className="footer-name">Isidore DJEMABOU</h3>
           <p className="footer-role">
             Étudiant en Mathématiques, Informatique et Applications (MIA)
           </p>
