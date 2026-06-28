@@ -1,0 +1,167 @@
+.footer {
+  background: #0f172a;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 60px 24px 0;
+}
+ 
+/* ── Conteneur principal ── */
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+  padding-bottom: 48px;
+}
+ 
+/* ══ GAUCHE — Identité ══ */
+.footer-identity {
+  flex: 1;
+  max-width: 340px;
+}
+ 
+.footer-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: #f1f5f9;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+ 
+.footer-role {
+  font-size: 13px;
+  font-weight: 600;
+  color: #60a5fa;
+  margin-bottom: 12px;
+}
+ 
+.footer-bio {
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.75;
+}
+ 
+/* ══ CENTRE — Réseaux ══ */
+.footer-socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+ 
+.footer-socials-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #f1f5f9;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+ 
+.footer-socials-icons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+ 
+/* ── Icône sociale ── */
+.social-link {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.3s ease, background 0.3s ease,
+              border-color 0.3s ease, transform 0.3s ease;
+}
+ 
+.social-link:hover {
+  color: var(--hover-color);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--hover-color);
+  transform: translateY(-3px);
+}
+ 
+/* ══ DROITE — Copyright ══ */
+.footer-copy {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+ 
+.footer-copy p {
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+ 
+.footer-made {
+  margin-top: 8px;
+  font-size: 12px !important;
+  color: #475569 !important;
+}
+ 
+/* ── Ligne de bas ── */
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+}
+ 
+.footer-bottom p {
+  font-size: 12px;
+  color: #475569;
+}
+ 
+.footer-bottom span {
+  color: #60a5fa;
+  font-weight: 600;
+}
+ 
+/* ══ RESPONSIVE TABLETTE ══ */
+@media (max-width: 1024px) {
+  .footer-inner {
+    gap: 32px;
+  }
+  .footer-identity {
+    max-width: 260px;
+  }
+}
+ 
+/* ══ RESPONSIVE MOBILE ══ */
+@media (max-width: 768px) {
+  .footer {
+    padding: 48px 24px 0;
+  }
+ 
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 36px;
+    padding-bottom: 36px;
+  }
+ 
+  .footer-identity {
+    max-width: 100%;
+  }
+ 
+  .footer-copy {
+    text-align: center;
+    align-items: center;
+  }
+ 
+  .footer-socials-icons {
+    gap: 10px;
+  }
+}
+ 

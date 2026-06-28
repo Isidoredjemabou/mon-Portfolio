@@ -1,0 +1,371 @@
+
+.education {
+  padding: 100px 80px;
+  background: #f8faff;
+}
+ 
+/* ── En-tête ── */
+.education-header {
+  margin-bottom: 64px;
+  text-align: center;
+}
+ 
+.edu-label {
+  color: #1e40af;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+ 
+.edu-title {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+}
+ 
+.edu-subtitle {
+  color: #6b7280;
+  font-size: 16px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+ 
+/* ══ TIMELINE ══ */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+ 
+/* Trait vertical centré */
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background: linear-gradient(to bottom, #1e40af, #bfdbfe);
+  z-index: 0;
+}
+ 
+/* ── Item ── */
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding-bottom: 48px;
+}
+ 
+/* Gauche */
+.timeline-item.left {
+  left: 0;
+  padding-right: 52px;
+  text-align: right;
+}
+ 
+/* Droite */
+.timeline-item.right {
+  left: 50%;
+  padding-left: 52px;
+  text-align: left;
+}
+ 
+/* ── Point sur le trait ── */
+.timeline-dot {
+  position: absolute;
+  top: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #1e40af;
+  color: #1e40af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  box-shadow: 0 2px 12px rgba(30, 64, 175, 0.15);
+  transition: transform 0.2s;
+}
+.timeline-item.left .timeline-dot {
+  right: -20px;
+}
+.timeline-item.right .timeline-dot {
+  left: -20px;
+}
+.timeline-dot.active {
+  background: #1e40af;
+  color: white;
+  box-shadow: 0 0 0 6px rgba(30, 64, 175, 0.12);
+}
+ 
+/* ── Carte ── */
+.timeline-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 24px 28px;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.timeline-card:hover {
+  border-color: #1e40af;
+  box-shadow: 0 8px 28px rgba(30, 64, 175, 0.09);
+  transform: translateY(-3px);
+}
+.timeline-card.card-active {
+  border-color: #bfdbfe;
+  box-shadow: 0 4px 20px rgba(30, 64, 175, 0.08);
+}
+ 
+/* ── Haut de carte ── */
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.timeline-item.right .card-top {
+  justify-content: flex-start;
+}
+ 
+/* ── Badge statut ── */
+.edu-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.badge-encours {
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+.badge-valide {
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+ 
+/* Animation spinner */
+.spin {
+  animation: spin 1.5s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+ 
+.edu-periode {
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 500;
+}
+ 
+/* ── Diplôme ── */
+.edu-diplome {
+  font-size: 18px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 4px;
+}
+ 
+/* ── Institution ── */
+.edu-institution {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e40af;
+  margin-bottom: 2px;
+}
+ 
+.edu-faculte {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+ 
+/* ── Mention ── */
+.edu-mention {
+  font-size: 13px;
+  font-weight: 600;
+  color: #92400e;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 6px 12px;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+ 
+/* ── Tags matières ── */
+.edu-matieres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+  justify-content: flex-end;
+}
+.timeline-item.right .edu-matieres {
+  justify-content: flex-start;
+}
+ 
+.edu-matiere-tag {
+  background: #eff6ff;
+  color: #1e40af;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid #bfdbfe;
+}
+ 
+/* ── Description ── */
+.edu-desc {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.7;
+  margin-top: 10px;
+}
+ 
+/* ══ RESPONSIVE MOBILE ══ */
+@media (max-width: 768px) {
+  .education {
+    padding: 80px 24px;
+  }
+ 
+  /* Tout à gauche sur mobile */
+  .timeline-line {
+    left: 20px;
+  }
+ 
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    width: 100%;
+    left: 0;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: left;
+    box-sizing: border-box;
+  }
+ 
+  .timeline-item.left .timeline-dot,
+  .timeline-item.right .timeline-dot {
+    left: 0px;
+    right: auto;
+  }
+ 
+  .card-top,
+  .timeline-item.left .card-top,
+  .timeline-item.right .card-top {
+    justify-content: flex-start;
+  }
+ 
+  .edu-matieres,
+  .timeline-item.left .edu-matieres {
+    justify-content: flex-start;
+  }
+}
+
+/* ══ FORMATIONS COMPLÉMENTAIRES & OBJECTIFS ══ */
+.edu-extra {
+  margin-top: 60px;
+  padding: 0 16px;
+}
+  
+
+.edu-extra-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.edu-extra-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  overflow: hidden;
+}
+
+.edu-extra-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 50px;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.edu-extra-card:hover {
+  border-color: #1e40af;
+  box-shadow: 0 8px 28px rgba(30, 64, 175, 0.09);
+  transform: translateY(-3px);
+}
+
+.edu-extra-icon {
+  width: 48px;
+  height: 48px;
+  background: #eff6ff;
+  color: #1e40af;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.edu-extra-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.edu-extra-sous-titre {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e40af;
+  margin-bottom: 16px;
+}
+
+.edu-extra-desc {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+.edu-extra-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.edu-extra-points li {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.6;
+  padding: 12px 14px;
+  background: #f8faff;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+/* ── Responsive mobile ── */
+@media (max-width: 768px) {
+  .edu-extra-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .edu-extra-card {
+    padding: 24px;
+  }
+}

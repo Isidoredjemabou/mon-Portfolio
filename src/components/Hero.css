@@ -1,0 +1,229 @@
+/* ── Hero Section ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 100px 80px 60px;
+  background: #f0f4ff;
+  position: relative;
+  overflow: hidden;
+}
+ 
+/* ── Décorations de fond ── */
+.hero-bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-bg-circle--1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%);
+  top: -150px;
+  right: 100px;
+}
+.hero-bg-circle--2 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%);
+  bottom: -80px;
+  left: -80px;
+}
+.hero-bg-dots {
+  position: absolute;
+  top: 120px;
+  right: 340px;
+  width: 120px;
+  height: 120px;
+  background-image: radial-gradient(circle, #3b82f6 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  opacity: 0.35;
+  z-index: 0;
+  pointer-events: none;
+}
+ 
+/* ── Contenu gauche ── */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  flex: 1;
+}
+ 
+.hero-greeting {
+  font-size: 18px;
+  color: #374151;
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+ 
+.hero-name {
+  font-size: clamp(36px, 6vw, 58px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+.hero-name--dark { color: #111827; }
+.hero-name--blue { color:#1e40af; }
+ 
+.hero-title-line {
+  width: 60px;
+  height: 4px;
+  background:#1e40af;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+ 
+.hero-role {
+  font-size: 18px;
+  color: #374151;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+ 
+.hero-description {
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.75;
+  margin-bottom: 32px;
+  max-width: 480px;
+}
+ 
+/* ── Boutons ── */
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+ 
+.btn {
+  padding: 13px 26px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+.btn--primary {
+  background:#1e40af;
+  color: #fff;
+  border: 2px solid#1e40af;
+}
+.btn--primary:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+.btn--outline {
+  background: transparent;
+  color:#1e40af;
+  border: 2px solid#1e40af;
+}
+.btn--outline:hover {
+  background: #eff6ff;
+  transform: translateY(-2px);
+}
+ 
+/* ── Photo ── */
+.hero-image-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  z-index: 1;
+}
+ 
+.hero-image-circle {
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #dbeafe;
+  box-shadow: 0 20px 60px rgba(37, 99, 235, 0.15);
+}
+ 
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+ 
+.hero-dot {
+  position: absolute;
+  border-radius: 50%;
+  background:#1e40af;
+  opacity: 0.25;
+}
+.hero-dot--tl { width: 18px; height: 18px; top: 20px; left: -10px; }
+.hero-dot--br { width: 28px; height: 28px; bottom: 20px; right: -10px; }
+ 
+/* ── Responsive tablette ── */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 100px 40px 60px;
+    gap: 30px;
+  }
+  .hero-image-circle {
+    width: 280px;
+    height: 280px;
+  }
+}
+ 
+/* ── Responsive mobile ── */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    padding: 90px 24px 50px;
+    text-align: center;
+    gap: 28px;
+    min-height: 100svh;
+  }
+ 
+  .hero-content {
+    max-width: 100%;
+  }
+ 
+  .hero-title-line {
+    margin: 0 auto 14px;
+  }
+ 
+  .hero-description {
+    max-width: 100%;
+    font-size: 14px;
+  }
+ 
+  .hero-actions {
+    justify-content: center;
+  }
+ 
+  .hero-image-circle {
+    width: 200px;
+    height: 200px;
+  }
+ 
+  .hero-bg-dots {
+    display: none;
+  }
+ 
+  .hero-bg-circle--1 {
+    width: 300px;
+    height: 300px;
+  }
+}
+ 
+/* ── Très petit écran ── */
+@media (max-width: 380px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
