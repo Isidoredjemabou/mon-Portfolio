@@ -55,7 +55,7 @@ const socials = [
   {
     icon: <FaEnvelope size={18} />,
     label: "Email",
-    href: "mailto:TON-EMAIL@gmail.com",
+    href: "mailto:isidoredjemabou@gmail.com",
     hoverColor: "#1e40af",
   },
 ];
