@@ -53,12 +53,7 @@ const Hero = () => {
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
       >
         <div className="hero-image-circle">
-          {/*
-            Remplace l'src par ta vraie photo :
-            1. Mets ta photo dans src/assets/photo.jpg
-            2. Importe-la en haut : import photo from "../assets/photo.jpg"
-            3. Utilise src={photo}
-          */}
+          
           <img
             src={isidore}
             alt="Djemabou Isidore"
@@ -72,4 +67,4 @@ const Hero = () => {
   );
 };
  
-export default Hero;
+export default Hero; 
