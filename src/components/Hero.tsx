@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import "./Hero.css";
-import isidore from "../assets/isidore.png"
+import isidore1 from "../assets/isidore1.png"
  
 const Hero = () => {
   return (
@@ -55,7 +55,7 @@ const Hero = () => {
         <div className="hero-image-circle">
           
           <img
-            src={isidore}
+            src={isidore1}
             alt="Djemabou Isidore"
             className="hero-photo"
           />
