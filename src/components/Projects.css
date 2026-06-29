@@ -102,8 +102,10 @@
   transform: scale(1.03);
 }
  
-.project-emoji {
-  font-size: 56px;
+.project-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
  
 .project-statut {

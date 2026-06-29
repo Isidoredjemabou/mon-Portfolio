@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import useActiveSection from "../hooks/useActiveSection";
 import "./Navbar.css";
 
 
@@ -43,6 +44,31 @@ const AnimatedLogo = () => {
  
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const activeSection = useActiveSection([
+    "home",
+    "about", 
+    "skills",
+    "projects",
+    "educations",
+    "contact",
+  ]);
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    const id = href.replace("#", "");
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    const navbarHeight = 70;
+    const top = target.getBoundingClientRect().top + window.scrollY - navbarHeight;
+    window.scrollTo({ top, behavior: "smooth" });
+    setIsOpen(false);
+  };
+
  
   const links = [
     { label: "Accueil", href: "#home" },
@@ -53,7 +79,6 @@ const Navbar = () => {
     { label: "Contact", href: "#contact" },
   ];
  
-  const handleClick = () => setIsOpen(false);
  
   return (
   <section className="home" id="home">
@@ -69,10 +94,18 @@ const Navbar = () => {
       {/* ── MENU DESKTOP (toujours visible) ── */}
       <nav className="navbar-desktop">
         {links.map((link) => (
-          <a key={link.href} href={link.href} className="navbar-link">
-            {link.label}
-          </a>
-        ))}
+      <a
+      key={link.href}
+      href={link.href}
+      className={`navbar-link ${
+        activeSection === link.href.replace("#", "") ? "active" : ""
+      }`}
+      onClick={(e) => handleNavClick(e, link.href)}
+    >
+      {link.label}
+    </a>
+  ))}
+
       </nav>
  
       {/* ── BOUTON HAMBURGER (mobile uniquement) ── */}
@@ -97,15 +130,17 @@ const Navbar = () => {
             transition={{ duration: 0.25 }}
           >
             {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="navbar-link"
-                onClick={handleClick}
-              >
-                {link.label}
-              </a>
-            ))}
+      <a
+      key={link.href}
+      href={link.href}
+      className={`navbar-link ${
+        activeSection === link.href.replace("#", "") ? "active" : ""
+      }`}
+      onClick={(e) => handleNavClick(e, link.href)}
+    >
+      {link.label}
+    </a>
+  ))}
           </motion.nav>
         )}
       </AnimatePresence>

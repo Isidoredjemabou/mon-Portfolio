@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useState, type JSX } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type {Variants} from "framer-motion"
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaBoxOpen, FaChartBar, FaBriefcase } from "react-icons/fa6";
+import { IoAlertCircle } from "react-icons/io5";
+import { GiPeaceDove } from "react-icons/gi";
 import "./Projects.css";
  
 /* ── Animation ── */
@@ -19,7 +22,7 @@ type Categorie = "Tous" | "Applications Web/Mobile" | "Python & Data";
  
 interface Projet {
   id: number;
-  emoji: string;
+  icon: JSX.Element;
   titre: string;
   statut: "En cours" | "Terminé";
   categorie: Categorie[];
@@ -33,7 +36,7 @@ interface Projet {
 const projets: Projet[] = [
   {
     id: 1,
-    emoji: "🚨",
+    icon: <IoAlertCircle size={40} color="#1e40af" />,
     titre: "Plateforme connectée d'Assistance Citoyenne",
     statut: "En cours",
     categorie: ["Applications Web/Mobile"],
@@ -45,7 +48,7 @@ const projets: Projet[] = [
   },
   {
     id: 2,
-    emoji: "📁",
+    icon: <FaBoxOpen size={40} color="#1e40af" />,
     titre: "Script d'Automatisation de Boutique",
     statut: "En cours",
     categorie: ["Python & Data"],
@@ -57,7 +60,7 @@ const projets: Projet[] = [
   },
   {
     id: 3,
-    emoji: "📊",
+    icon: <FaChartBar size={40} color="#1e40af" />,
     titre: "Data Processor Python & Excel",
     statut: "Terminé",
     categorie: ["Python & Data"],
@@ -69,7 +72,7 @@ const projets: Projet[] = [
   },
   {
     id: 4,
-    emoji: "🕊️",
+    icon: <GiPeaceDove size={40} color="#1e40af" />,
     titre: "Plateforme d'Échanges & Religion",
     statut: "En cours",
     categorie: ["Applications Web/Mobile"],
@@ -81,7 +84,7 @@ const projets: Projet[] = [
   },
   {
     id: 5,
-    emoji: "💼",
+    icon: <FaBriefcase size={40} color="#1e40af" />,
     titre: "Portfolio Professionnel Interactif",
     statut: "Terminé",
     categorie: ["Applications Web/Mobile"],
@@ -157,7 +160,7 @@ const Projects = () => {
             >
               {/* Zone image / emoji */}
               <div className="project-thumb">
-                <span className="project-emoji">{projet.emoji}</span>
+                <span className="project-icon">{projet.icon}</span>
                 <span className={`project-statut ${projet.statut === "Terminé" ? "statut-termine" : "statut-encours"}`}>
                   {projet.statut === "Terminé" ? "✅ Terminé" : "🔄 En cours"}
                 </span>
